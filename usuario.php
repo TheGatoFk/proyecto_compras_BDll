@@ -3,13 +3,13 @@ include('conexion_portal_compras.php');
 
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
-$email = $_POST['email'];
 $telefono = $_POST['telefono'];
 $direccion = $_POST['direccion'];
+$email = $_POST['email'];
 $contrasena = $_POST['contrasena'];
 
-$peticion = "INSERT INTO usuario (nombre, apellido, email, telefono, direccion, contraseña) 
-VALUE ('$nombre', '$apellido', '$email', '$telefono', '$direccion', '$contrasena')";
+$peticion = "INSERT INTO usuario (nombre, apellido, telefono, direccion, email, contrasena) 
+VALUE ('$nombre', '$apellido', '$telefono', '$direccion','$email', '$contrasena')";
 
 $validacion = mysqli_query($conexion, $peticion);
 
