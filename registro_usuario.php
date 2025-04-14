@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>¡Su cuenta ha sido creada!</h2>
-    <a href="nuevo_usuario.php">Ingresa otro usuario</a>
+    <a href="iniciar_sesion_usuario.php">Iniciar sesión</a>
     <a href="index.php">Regresa al inicio</a>
 
 </body>
