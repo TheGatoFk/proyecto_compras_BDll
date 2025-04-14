@@ -1,0 +1,152 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Hace que el body ocupe todo el alto de la ventana */
+}
+
+/* Contenedor principal */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-grow: 1; /* Esto hace que el contenedor principal ocupe el espacio restante */
+}
+
+/* Barra superior (Logo + Menú) */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d89ef;
+    padding: 15px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo h2 {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Menú de navegación */
+.menu {
+    display: flex;
+    gap: 20px; /* Espaciado entre los elementos del menú */
+    margin-left: -10px; /* Ajuste para mover el menú un poco hacia la izquierda */
+    margin-right: 28px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background-color: #1c60b3;
+}
+
+/* Título */
+.titulo {
+    text-align: center;
+    margin-top: 100px; /* Para compensar la barra superior fija */
+}
+
+/* Estilo para el formulario de nuevo usuario */
+.formulario {
+    background-color: #fff;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2.logotipo {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2d89ef;
+}
+
+.formulario label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+.formulario input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.formulario input[type="text"]:focus {
+    border-color: #2d89ef;
+    outline: none;
+}
+
+.formulario button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2d89ef;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #1c60b3;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu ul li {
+        margin-bottom: 10px;
+    }
+
+    .formulario {
+        padding: 15px;
+        max-width: 100%;
+    }
+}
