@@ -1,58 +1,54 @@
-z<?php
-// Iniciar la sesión al principio del archivo
+<?php
 session_start();
-
-// Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['usuario_id'])) {
-    // Si no está autenticado, redirigir a la página de inicio de sesión
     header("Location: iniciar_sesion_usuario.php");
     exit();
 }
+
+// Obtener el nombre del usuario desde la sesión
+$usuario_nombre = $_SESSION['usuario_nombre'];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Página Principal</title>
+    <title>Mi cuenta - DataShop</title>
+    <link rel="stylesheet" href="css/panel.css">
 </head>
-
 <body>
-    <div class="Contenedor">
-        <!-- Barra superior (Logo + Menú) -->
-        <div class="top-bar">
-            <!-- Logo -->
-            <div class="logo">
-                <h2>DataShop</h2>
-            </div>
-            <!-- Menú -->
-            <div class="menu">
-                <ul>
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="mi_cuenta.php">Mi cuenta</a></li>
-                </ul>
-            </div>
-        </div>
 
+    <!-- Barra superior -->
+    <div class="top-bar">
+        <div class="logo">
+            <h2>DataShop</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="panel.php">Inicio</a></li>
+                <li><a href="mi_cuenta.php">Mi cuenta</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="contenedor">
         <div class="titulo">
-            <h1>Bienvenido a su cuenta</h1>
+            <h1>Bienvenido, <?php echo htmlspecialchars($usuario_nombre); ?>!</h1>
             <h2 class="subtitulo">Gestiona tus productos</h2>
         </div>
     </div>
-    
-    <!-- Footer colocado fuera del Contenedor para que esté al final de la página -->
+
+    <!-- Footer -->
     <footer>
-        <h3>Síguenos en nuestras redes sociales</h3>
+        <p>Síguenos en nuestras redes sociales:</p>
         <div class="redes-sociales">
-            <a href="https://www.facebook.com" target="_blank" title="Facebook">📘</a>
-            <a href="https://www.twitter.com" target="_blank" title="Twitter">🐦</a>
-            <a href="https://www.instagram.com" target="_blank" title="Instagram">📸</a>
-            <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">💼</a>
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
         </div>
     </footer>
-</body>
 
+</body>
 </html>
