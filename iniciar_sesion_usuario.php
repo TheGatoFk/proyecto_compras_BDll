@@ -41,6 +41,9 @@
             <input type="password" name="contrasena">
             <br><br>
             <button>Continuar</button>
+            <p class="crear-cuenta">
+            ¿No tienes una cuenta? <a href="registro_usuario.php">Crea una aquí</a>
+            </p>
             
         </form>
     </div>
