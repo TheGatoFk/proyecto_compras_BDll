@@ -27,6 +27,7 @@ $usuario_nombre = $_SESSION['usuario_nombre'];
             <ul>
                 <li><a href="panel.php">Inicio</a></li>
                 <li><a href="mi_cuenta.php">Mi cuenta</a></li>
+                <li><a href="panel.php">carrito</a></li>
             </ul>
         </div>
     </div>
