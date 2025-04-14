@@ -1,40 +1,35 @@
 <?php
 include('conexion_portal_compras.php');
 
-// Recibir los datos del formulario
-$email = trim($_POST['email']); // Eliminar espacios adicionales
-$contrasena = trim($_POST['contrasena']); // Eliminar espacios adicionales
+// Recibir los datos del formularioooo
+$email = trim($_POST['email']);
+$contrasena = trim($_POST['contrasena']);
 
-// Evitar inyección SQL usando consultas preparadas
+// Consulta preparada para evitar inyección SQL
 $stmt = $conexion->prepare("SELECT * FROM usuario WHERE email = ?");
-$stmt->bind_param("s", $email); // "s" es el tipo de dato para cadenas (string)
+$stmt->bind_param("s", $email);
 $stmt->execute();
 $resultado = $stmt->get_result();
 
-// Verificar si el usuario existe
 if ($resultado->num_rows > 0) {
-    // El usuario existe, ahora verificar la contraseña
     $usuario = $resultado->fetch_assoc();
 
-    // Comparar la contraseña proporcionada con la almacenada (sin cifrado)
+    // Verificar contraseña sin cifrado (ajusta esto si luego usas hash)
     if ($contrasena === $usuario['contrasena']) {
-        // Si las contraseñas coinciden, iniciar sesión
         session_start();
         $_SESSION['usuario_id'] = $usuario['id_usuario'];
+        $_SESSION['usuario_nombre'] = $usuario['nombre']; // <- Aquí guardamos el nombre
 
-        // Redirigir a panel.php
-        $stmt->close(); // Cerrar la conexión antes de redirigir
+        $stmt->close();
         header("Location: panel.php");
         exit();
     } else {
-        // Contraseña incorrecta, redirigir a error_sesion.php
-        $stmt->close(); // Cerrar la conexión antes de redirigir
+        $stmt->close();
         header("Location: error_sesion.php?error=true");
         exit();
     }
 } else {
-    // Si el correo no existe, redirigir a error_sesion.php
-    $stmt->close(); // Cerrar la conexión antes de redirigir
+    $stmt->close();
     header("Location: error_sesion.php?error=true");
     exit();
 }
