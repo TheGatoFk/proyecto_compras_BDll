@@ -48,5 +48,18 @@
         </form>
     </div>
     
+    <?php
+    if ($resultado->num_rows > 0) {
+        $usuario = $resultado->fetch_assoc();
+        if (password_verify($contrasena, $usuario['contrasena'])) {
+            echo "Inicio de sesión exitoso.";
+        } else {
+            echo "Contraseña incorrecta.";
+        }
+    } else {
+        echo "Usuario no encontrado.";
+    }
+    ?>
+    
 </body>
 </html>

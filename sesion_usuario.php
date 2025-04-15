@@ -1,7 +1,7 @@
 <?php
 include('conexion_portal_compras.php');
 
-// Recibir los datos del formularioooo
+// Recibir los datos del formulario
 $email = trim($_POST['email']);
 $contrasena = trim($_POST['contrasena']);
 
@@ -14,11 +14,11 @@ $resultado = $stmt->get_result();
 if ($resultado->num_rows > 0) {
     $usuario = $resultado->fetch_assoc();
 
-    // Verificar contraseña sin cifrado (ajusta esto si luego usas hash)
-    if ($contrasena === $usuario['contrasena']) {
+    // Verificar contraseña usando password_verify
+    if (password_verify($contrasena, $usuario['contrasena'])) {
         session_start();
         $_SESSION['usuario_id'] = $usuario['id_usuario'];
-        $_SESSION['usuario_nombre'] = $usuario['nombre']; // <- Aquí guardamos el nombre
+        $_SESSION['usuario_nombre'] = $usuario['nombre'];
 
         $stmt->close();
         header("Location: panel.php");
