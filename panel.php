@@ -37,6 +37,7 @@ $usuario_nombre = $_SESSION['usuario_nombre'];
         <div class="titulo">
             <h1>Bienvenido, <?php echo htmlspecialchars($usuario_nombre); ?>!</h1>
             <h2 class="subtitulo">Gestiona tus productos</h2>
+            
         </div>
     </div>
 
