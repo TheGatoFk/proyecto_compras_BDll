@@ -6,45 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Productos</title>
     <link rel="stylesheet" href="css/index.css"> <!-- Vincula el archivo CSS -->
-    <style>
-        .productos-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .producto-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 16px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .producto-card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        .producto-card h3 {
-            margin: 10px 0;
-        }
-        .producto-card p {
-            margin: 5px 0;
-            color: #555;
-        }
-        .producto-card button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .producto-card button:hover {
-            background-color: #218838;
-        }
-    </style>
+    <link rel="stylesheet" href="css/productos.css"> <!-- Vincula el archivo CSS de productos -->
+<style>
+</style>
 </head>
 <body>
     <div class="Contenedor">

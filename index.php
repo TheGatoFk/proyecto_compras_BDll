@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/productos.css"> <!-- Vincula el archivo CSS de productos -->
     <title>Pagina Principal</title>
 </head>
 
@@ -23,8 +24,6 @@
                     <li><a href="iniciar_sesion_usuario.php">Iniciar sesion</a></li>
                     <li><a href="lista_producto.php">Carrito</a></li>
                     <li><a href="productos.php">Productos</a></li>
-
-                    
                 </ul>
             </div>
         </div>
@@ -32,6 +31,40 @@
         <div class="titulo">
             <h1>Bienvenido a la tienda en linea</h1>
             <h2 class="subtitulo">Gestiona tus productos</h2>
+            <div class="productos-container">
+                            <?php
+                            include 'conexion_portal_compras.php';
+                            if (!$conexion) {
+                                die("Conexión fallida: " . mysqli_connect_error());
+                            }
+                
+                            // Consulta para obtener productos y sus imágenes
+                            $query = "SELECT p.id_producto, p.nombre, p.descripcion, p.precio, p.stock, i.url_imagen 
+                                      FROM producto p
+                                      LEFT JOIN imagen_producto i ON p.id_producto = i.producto_id_producto";
+                            $result = mysqli_query($conexion, $query);
+                
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<div class='producto-card'>";
+                                    echo "<img src='imagenes/" . $row['url_imagen'] . "' alt='" . $row['nombre'] . "'>";
+                                    echo "<h3>" . $row['nombre'] . "</h3>";
+                                    echo "<p>" . $row['descripcion'] . "</p>";
+                                    echo "<p><strong>Precio:</strong> Q" .number_format($row['precio'], 2) . "</p>";
+                                    echo "<p><strong>Stock:</strong> " . $row['stock'] . "</p>";
+                                    echo "<form action='carrito.php' method='post'>
+                                            <input type='hidden' name='id_producto' value='" . $row['id_producto'] . "'>
+                                            <button type='submit'>Agregar al carrito</button>
+                                          </form>";
+                                    echo "</div>";
+                                }
+                            } else {
+                                echo "<p>No hay productos disponibles</p>";
+                            }
+                
+                            mysqli_close($conexion);
+                            ?>
+                        </div>
         </div>
     </div>
     
