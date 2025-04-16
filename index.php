@@ -24,6 +24,9 @@
                     <li><a href="iniciar_sesion_usuario.php">Iniciar sesion</a></li>
                     <li><a href="lista_producto.php">Carrito</a></li>
                     <li><a href="productos.php">Productos</a></li>
+                    <ul class ="menu categorias">
+                        
+
                 </ul>
             </div>
         </div>
