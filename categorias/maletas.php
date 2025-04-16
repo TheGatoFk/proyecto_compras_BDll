@@ -1,5 +1,5 @@
 <?php
-include 'conexion_portal_compras.php';
+include '../conexion_portal_compras.php'; // Ruta ajustada para la conexión
 
 if (!$conexion) {
     die("Conexión fallida: " . mysqli_connect_error());
@@ -17,8 +17,8 @@ $result = mysqli_query($conexion, $query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/productos.css"> <!-- Estilos de productos -->
-    <link rel="stylesheet" href="css/index.css"> <!-- Estilos generales -->
+    <link rel="stylesheet" href="../css/productos.css"> <!-- Ruta ajustada para los estilos -->
+    <link rel="stylesheet" href="../css/index.css"> <!-- Ruta ajustada para los estilos -->
     <title>Maletas</title>
 </head>
 <body>
@@ -29,10 +29,10 @@ $result = mysqli_query($conexion, $query);
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="iniciar_sesion_usuario.php">Iniciar sesión</a></li>
-                    <li><a href="lista_producto.php">Carrito</a></li>
-                    <li><a href="productos.php">Productos</a></li>
+                    <li><a href="../index.php">Inicio</a></li>
+                    <li><a href="../iniciar_sesion_usuario.php">Iniciar sesión</a></li>
+                    <li><a href="../lista_producto.php">Carrito</a></li>
+                    <li><a href="../productos.php">Productos</a></li>
                 </ul>
             </div>
         </div>
@@ -46,12 +46,12 @@ $result = mysqli_query($conexion, $query);
             <?php if (mysqli_num_rows($result) > 0): ?>
                 <?php while ($row = mysqli_fetch_assoc($result)): ?>
                     <div class="producto-card">
-                        <img src="imagenes/<?php echo htmlspecialchars($row['url_imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>">
+                        <img src="../imagenes/<?php echo htmlspecialchars($row['url_imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>">
                         <h3><?php echo htmlspecialchars($row['nombre']); ?></h3>
                         <p><?php echo htmlspecialchars($row['descripcion']); ?></p>
                         <p><strong>Precio:</strong> Q<?php echo number_format($row['precio'], 2); ?></p>
                         <p><strong>Stock:</strong> <?php echo $row['stock']; ?></p>
-                        <form action="carrito.php" method="post">
+                        <form action="../carrito.php" method="post">
                             <input type="hidden" name="id_producto" value="<?php echo $row['id_producto']; ?>">
                             <button type="submit">Agregar al carrito</button>
                         </form>
