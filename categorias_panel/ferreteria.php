@@ -29,10 +29,9 @@ $result = mysqli_query($conexion, $query);
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="../index.php">Inicio</a></li>
-                    <li><a href="../iniciar_sesion_usuario.php">Iniciar sesión</a></li>
-                    <li><a href="../lista_producto.php">Carrito</a></li>
-                    <li><a href="../productos.php">Productos</a></li>
+                <li><a href="../panel.php">Inicio</a></li>
+                    <li><a href="../panel.php">Carrito</a></li>
+                    <li><a href="../productos_panel.php">Productos</a></li>
                 </ul>
             </div>
         </div>
