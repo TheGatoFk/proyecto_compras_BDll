@@ -1,5 +1,5 @@
 <?php
-include '../conexion_portal_compras.php'; // Cambiamos la ruta al archivo de conexión
+include '../conexion_portal_compras.php'; // Ruta ajustada para la conexión
 
 if (!$conexion) {
     die("Conexión fallida: " . mysqli_connect_error());
@@ -17,7 +17,7 @@ if (mysqli_num_rows($result) > 0) {
         $producto_id_producto = $row['producto_id_producto'];
 
         // Convertir el nombre de la categoría en un formato adecuado para un archivo
-        $nombre_archivo = strtolower(str_replace(' ', '_', preg_replace('/[^A-Za-z0-9 ]/', '', $nombre_categoria))) . ".php";
+        $nombre_archivo = strtolower(str_replace(' ', '_', preg_replace('/[^A-Za-z0-9_]/', '', $nombre_categoria))) . ".php";
 
         // Crear el contenido del archivo PHP
         $contenido = <<<PHP
