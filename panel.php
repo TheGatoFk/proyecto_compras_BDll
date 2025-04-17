@@ -15,6 +15,7 @@ $usuario_nombre = $_SESSION['usuario_nombre'];
     <meta charset="UTF-8">
     <title>Mi cuenta - DataShop</title>
     <link rel="stylesheet" href="css/panel.css">
+    <link rel="stylesheet" href="css/productos.css"> <!-- Vincula el CSS de productos -->
 </head>
 <body>
 
@@ -27,7 +28,7 @@ $usuario_nombre = $_SESSION['usuario_nombre'];
             <ul>
                 <li><a href="panel.php">Inicio</a></li>
                 <li><a href="mi_cuenta.php">Mi cuenta</a></li>
-                <li><a href="panel.php">carrito</a></li>
+                <li><a href="carrito.php">Carrito</a></li>
             </ul>
         </div>
     </div>
@@ -37,7 +38,41 @@ $usuario_nombre = $_SESSION['usuario_nombre'];
         <div class="titulo">
             <h1>Bienvenido, <?php echo htmlspecialchars($usuario_nombre); ?>!</h1>
             <h2 class="subtitulo">Gestiona tus productos</h2>
-            
+        </div>
+
+        <div class="productos-container">
+            <?php
+            include 'conexion_portal_compras.php';
+            if (!$conexion) {
+                die("Conexión fallida: " . mysqli_connect_error());
+            }
+
+            // Consulta para obtener productos y sus imágenes
+            $query = "SELECT p.id_producto, p.nombre, p.descripcion, p.precio, p.stock, i.url_imagen 
+                      FROM producto p
+                      LEFT JOIN imagen_producto i ON p.id_producto = i.producto_id_producto";
+            $result = mysqli_query($conexion, $query);
+
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<div class='producto-card'>";
+                    echo "<img src='imagenes/" . $row['url_imagen'] . "' alt='" . $row['nombre'] . "'>";
+                    echo "<h3>" . $row['nombre'] . "</h3>";
+                    echo "<p>" . $row['descripcion'] . "</p>";
+                    echo "<p><strong>Precio:</strong> Q" . number_format($row['precio'], 2) . "</p>";
+                    echo "<p><strong>Stock:</strong> " . $row['stock'] . "</p>";
+                    echo "<form action='carrito.php' method='post'>
+                            <input type='hidden' name='id_producto' value='" . $row['id_producto'] . "'>
+                            <button type='submit'>Agregar al carrito</button>
+                          </form>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>No hay productos disponibles</p>";
+            }
+
+            mysqli_close($conexion);
+            ?>
         </div>
     </div>
 
