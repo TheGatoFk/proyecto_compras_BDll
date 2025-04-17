@@ -28,7 +28,8 @@ $usuario_nombre = $_SESSION['usuario_nombre'];
             <ul>
                 <li><a href="panel.php">Inicio</a></li>
                 <li><a href="mi_cuenta.php">Mi cuenta</a></li>
-                <li><a href="carrito.php">Carrito</a></li>
+                <li><a href="panel.php">Carrito</a></li>
+                <li><a href="productos_panel.php">Productos</a></li>
             </ul>
         </div>
     </div>

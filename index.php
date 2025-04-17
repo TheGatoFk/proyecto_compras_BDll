@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/productos.css"> <!-- Vincula el archivo CSS de productos -->
     <title>Pagina Principal</title>
 </head>
@@ -20,22 +20,13 @@
             <!-- Menú -->
             <div class="menu">
                 <ul>
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="iniciar_sesion_usuario.php">Iniciar sesión</a></li>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="iniciar_sesion_usuario.php">Iniciar sesion</a></li>
                     <li><a href="lista_producto.php">Carrito</a></li>
-                    <li class="menu-item">
-                        <a href="#">Productos por categorías</a>
-                        <ul class="menu-categorias-vertical">
-                            <li><a href="categorias/electrodomesticos.php">Electrodomésticos</a></li>
-                            <li><a href="categorias/computacion.php">Computación</a></li>
-                            <li><a href="categorias/muebles.php">Muebles</a></li>
-                            <li><a href="categorias/salud.php">Salud</a></li>
-                            <li><a href="categorias/cocina.php">Cocina</a></li>
-                            <li><a href="categorias/bebes.php">Bebés</a></li>
-                            <li><a href="categorias/deportes.php">Deportes</a></li>
-                            <li><a href="productos.php">Otros</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="productos.php">Productos</a></li>
+                    <ul class ="menu categorias">
+                        
+
                 </ul>
             </div>
         </div>
@@ -90,7 +81,6 @@
             <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">💼</a>
         </div>
     </footer>
-
 </body>
 
 </html>

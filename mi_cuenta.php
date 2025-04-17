@@ -21,7 +21,6 @@ if (!isset($_SESSION['usuario_id'])) {
         <nav>
             <ul>
                 <li><a href="panel.php">Inicio</a></li>
-                <li><a href="mi_cuenta.php">Mi cuenta</a></li>
             </ul>
         </nav>
     </div>
