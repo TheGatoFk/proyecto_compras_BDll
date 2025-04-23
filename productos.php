@@ -18,7 +18,7 @@
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="iniciar_sesion_usuario.php">Iniciar sesión</a></li>
-                    <li><a href="lista_producto.php">Carrito</a></li>
+                    
                     <li class="menu-item">
                         <a href="#">Productos por categorías</a>
                         <ul class="menu-categorias-vertical">
@@ -31,7 +31,8 @@
                             <li><a href="categorias/deportes.php">Deportes</a></li>
                             <li><a href="productos.php">Otros</a></li>
                         </ul>
-                    </li>
+                    </li> 
+                    <li><a href="lista_producto.php">Carrito</a></li>
                 </ul>
             </div>
         </div>

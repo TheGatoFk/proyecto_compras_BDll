@@ -1,37 +1,165 @@
-.productos-container {
+/* Contenedor principal de la tarjeta */
+.producto-card {
+    width: 250px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenedor de imagen */
+.imagen-contenedor {
+    width: 220px;
+    height: 170px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Imagen del producto */
+.producto-card img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Contenido del producto */
+.contenido-producto {
+    flex: 1;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+/* Botón de acción */
+.producto-card form {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* ===== [NUEVO] Menú desplegable de categorías ===== */
+.menu-categorias-vertical {
+    position: absolute;
+    background: white;
+    width: 220px;
+    border-radius: 12px; /* Borde redondeado principal */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    overflow: hidden;
+    z-index: 1000;
+    display: none;
+    margin-top: 8px;
+    border: 1px solid #eaeaea;
+    padding: 5px 0; /* Espacio interno */
+}
+
+.menu-item:hover .menu-categorias-vertical {
+    display: block;
+}
+
+.menu-categorias-vertical li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-categorias-vertical li a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    background-color: white;
+    margin: 0 5px;
+    border-radius: 8px; /* Bordes redondeados para cada ítem */
+}
+
+/* Efecto hover y elementos extremos */
+.menu-categorias-vertical li:first-child a {
+    margin-top: 3px;
+}
+
+.menu-categorias-vertical li:last-child a {
+    margin-bottom: 3px;
+}
+
+.menu-categorias-vertical li a:hover {
+    background-color: #f8f9fa;
+    color: #1c60b3;
+    transform: translateX(3px);
+}
+
+/* Separador entre elementos */
+.menu-categorias-vertical li:not(:last-child) a {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* ===== Estilos para el grid de categorías ===== */
+.categorias-container {
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
+    gap: 20px;
 }
-.producto-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.categorias-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
 }
-.producto-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+
+.categoria-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
-.producto-card h3 {
-    margin: 10px 0;
+
+.categoria-item:hover {
+    transform: translateY(-5px);
 }
-.producto-card p {
-    margin: 5px 0;
-    color: #555;
+
+.categoria-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
-.producto-card button {
-    background-color: #28a745;
+
+.categoria-item h3 {
+    padding: 15px 15px 0;
+    margin: 0;
+    color: #333;
+}
+
+.categoria-item p {
+    padding: 0 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.btn-categoria {
+    display: inline-block;
+    margin: 15px;
+    padding: 8px 15px;
+    background-color: #1c60b3;
     color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
-.producto-card button:hover {
-    background-color: #218838;
+
+.btn-categoria:hover {
+    background-color: #154b8a;
 }

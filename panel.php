@@ -87,6 +87,5 @@ $usuario_nombre = $_SESSION['usuario_nombre'];
             <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
         </div>
     </footer>
-
 </body>
 </html>
