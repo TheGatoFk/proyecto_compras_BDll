@@ -1,16 +1,16 @@
 /* Contenedor principal de la tarjeta */
 .producto-card {
     width: 250px;
-    height: 480px;
     display: flex;
     flex-direction: column;
     padding: 15px;
     margin: 10px;
     border-radius: 12px;
     background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
+    text-align: center; /* Centra el contenido */
 }
 
 /* Contenedor de imagen */
@@ -28,10 +28,11 @@
 
 /* Imagen del producto */
 .producto-card img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-    object-position: center;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 /* Contenido del producto */
@@ -41,10 +42,37 @@
     overflow: hidden;
 }
 
+.producto-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.producto-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
 /* Botón de acción */
 .producto-card form {
     margin-top: auto;
     width: 100%;
+}
+
+.producto-card form button {
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.producto-card form button:hover {
+    background-color: #218838; /* Verde más oscuro */
 }
 
 /* ===== [NUEVO] Menú desplegable de categorías ===== */
@@ -162,4 +190,14 @@
 
 .btn-categoria:hover {
     background-color: #154b8a;
+}
+
+/* Contenedor de productos */
+.productos-container {
+    display: grid; /* Cambia a diseño de cuadrícula */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta el número de columnas automáticamente */
+    gap: 20px; /* Espaciado entre las tarjetas */
+    padding: 20px;
+    max-width: 1200px; /* Limita el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
 }
