@@ -15,6 +15,7 @@ $usuario_nombre = $_SESSION['usuario_nombre'];
 <head>
     <meta charset="UTF-8">
     <title>Mi cuenta - DataShop</title>
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/panel.css">
     <link rel="stylesheet" href="css/productos.css"> <!-- Vincula el CSS de productos -->
 </head>

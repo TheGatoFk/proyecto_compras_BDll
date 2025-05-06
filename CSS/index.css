@@ -44,21 +44,22 @@ body {
 /* Menú de navegación */
 .menu {
     display: flex;
-    gap: 20px; /* Espaciado entre los elementos del menú */
-    margin-left: -10px; /* Ajuste para mover el menú un poco hacia la izquierda */
-    margin-right: 28px;
-    position: relative;
+    gap: 20px;
+    background-color: #2d89ef;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .menu ul {
     list-style: none;
-    display: flex;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 .menu ul li {
-    margin: 0;
+    position: relative;
 }
 
 /* Menú principal */
@@ -287,3 +288,72 @@ nav {
     background-color: #1c60b3;
 }
 
+/* Estilos para el menú principal */
+.menu {
+    display: flex;
+    gap: 20px;
+    background-color: #2d89ef;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background-color: #1c60b3;
+}
+
+/* Estilos para el menú desplegable */
+.menu-categorias-vertical {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2d89ef;
+    border: 1px solid #1c60b3;
+    border-radius: 5px;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-categorias-vertical li {
+    list-style: none;
+}
+
+.menu-categorias-vertical li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.menu-categorias-vertical li a:hover {
+    background-color: #1c60b3;
+}
+
+/* Mostrar el menú desplegable al pasar el mouse */
+.menu-item:hover .menu-categorias-vertical {
+    display: block;
+}

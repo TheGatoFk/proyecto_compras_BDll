@@ -1,7 +1,9 @@
 <div class="top-bar">
+    <!-- Logo -->
     <div class="logo">
         <h2>DataShop</h2>
     </div>
+    <!-- Menú -->
     <div class="menu">
         <ul>
             <li><a href="index.php">Inicio</a></li>
@@ -40,6 +42,19 @@
             }
             ?>
             <li><a href="productos.php">Productos</a></li>
+            <li class="menu-item">
+                <a href="#">Productos por categorías</a>
+                <ul class="menu-categorias-vertical">
+                    <li><a href="categorias/electrodomesticos.php">Electrodomésticos</a></li>
+                    <li><a href="categorias/computacion.php">Computación</a></li>
+                    <li><a href="categorias/muebles.php">Muebles</a></li>
+                    <li><a href="categorias/salud.php">Salud</a></li>
+                    <li><a href="categorias/cocina.php">Cocina</a></li>
+                    <li><a href="categorias/bebes.php">Bebés</a></li>
+                    <li><a href="categorias/deportes.php">Deportes</a></li>
+                    <li><a href="productos.php">Otros</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </div>
