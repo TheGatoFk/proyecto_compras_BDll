@@ -10,32 +10,7 @@
 <body>
     <div class="Contenedor">
         <!-- Barra superior (Logo + Menú) -->
-        <div class="top-bar">
-            <div class="logo">
-                <h2>DataShop</h2>
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="iniciar_sesion_usuario.php">Iniciar sesión</a></li>
-                    
-                    <li class="menu-item">
-                        <a href="#">Productos por categorías</a>
-                        <ul class="menu-categorias-vertical">
-                            <li><a href="categorias/electrodomesticos.php">Electrodomésticos</a></li>
-                            <li><a href="categorias/computacion.php">Computación</a></li>
-                            <li><a href="categorias/muebles.php">Muebles</a></li>
-                            <li><a href="categorias/salud.php">Salud</a></li>
-                            <li><a href="categorias/cocina.php">Cocina</a></li>
-                            <li><a href="categorias/bebes.php">Bebés</a></li>
-                            <li><a href="categorias/deportes.php">Deportes</a></li>
-                            <li><a href="productos.php">Otros</a></li>
-                        </ul>
-                    </li> 
-                    <li><a href="lista_producto.php">Carrito</a></li>
-                </ul>
-            </div>
-        </div>
+        <?php include('menu.php'); ?> <!-- Menú reutilizable -->
 
         <div class="titulo">
             <h1>Buscar por Categorías</h1>

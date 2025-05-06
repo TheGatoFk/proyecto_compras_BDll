@@ -28,6 +28,11 @@
 </div>
 
 <div class="formulario">
+    <?php
+    if (isset($_GET['error']) && $_GET['error'] === 'credenciales_invalidas') {
+        echo "<p style='color: red;'>Usuario o contraseña incorrectos. Inténtalo de nuevo.</p>";
+    }
+    ?>
     <form action="sesion_usuario.php" method="post">
         <h2 class="logotipo">Ingresa tus datos</h2>
         <label for="">Email</label>

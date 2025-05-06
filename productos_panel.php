@@ -8,34 +8,9 @@
     <link rel="stylesheet" href="css/productos.css"> <!-- Vincula el archivo CSS de productos -->
 </head>
 <body>
-    <div class="Contenedor">
-        <!-- Barra superior (Logo + Menú) -->
-        <div class="top-bar">
-            <div class="logo">
-                <h2>DataShop</h2>
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="panel.php">Inicio</a></li>
-                    <li><a href="mi_cuenta.php">Mi cuenta</a></li>
-                    <li><a href="panel.php">Carrito</a></li>
-                    <li class="menu-item">
-                        <a href="#">Productos por categorías</a>
-                        <ul class="menu-categorias-vertical">
-                            <li><a href="categorias_panel/electrodomesticos.php">Electrodomésticos</a></li>
-                            <li><a href="categorias_panel/computacion.php">Computación</a></li>
-                            <li><a href="categorias_panel/muebles.php">Muebles</a></li>
-                            <li><a href="categorias_panel/salud.php">Salud</a></li>
-                            <li><a href="categorias_panel/cocina.php">Cocina</a></li>
-                            <li><a href="categorias_panel/bebes.php">Bebés</a></li>
-                            <li><a href="categorias_panel/deportes.php">Deportes</a></li>
-                            <li><a href="productos.php">Otros</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <?php include('menu.php'); ?> <!-- Menú reutilizable -->
 
+    <div class="contenedor">
         <div class="titulo">
             <h1>Buscar por Categorías</h1>
         </div>
@@ -76,7 +51,7 @@
                     echo "<p>" . $row['descripcion'] . "</p>";
                     // Generar el enlace eliminando tildes y reemplazando espacios por guiones bajos
                     $nombre_sanitizado = strtolower(str_replace(' ', '_', eliminar_tildes($row['nombre'])));
-                    echo "<a href='categorias/" . $nombre_sanitizado . ".php' class='btn-categoria'>Ir a la categoría</a>";
+                    echo "<a href='categorias_panel/" . $nombre_sanitizado . ".php' class='btn-categoria'>Ir a la categoría</a>";
                     echo "</div>";
                 }
                 echo "</div>";
